@@ -23,19 +23,24 @@ This is the Writeup.
 
 #### 1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 I read two type of images from dataset (cars and not-cars).
+
 ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/car_not_car.png)
 
 I used get_hog_features() function to get HOG (P5.ipynb cell 7). The parameters used in HOG function are: orient = 9, pix_per_cell = 8 and cell_per_block = 2.
+
 ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/HOG.png)
 
 I combined color feature histogram and spatial binning with HOG as feature to train the SVM classifier.
 The parameters of spatial binning are: spatial_size = (16, 16), hist_bins = 16.
+
 ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/spatial_binning.png)
 
 I also compare the color features in different color areas such as RGB, HSV and YCrCb. And chose YCrCb for the best test accuracy.
+
 ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/color_features_histogram.png)
 
 Finally, I normalized the features I extracted from the dataset.
+
 ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/normalized_features.png)
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
@@ -56,15 +61,18 @@ My parameters for window search are: xy_overlap = (0.8, 0.8), x_start_stop = [76
 
 #### 2. Show some examples of test images to demonstrate how your pipeline is working. What did you do to optimize the performance of your classifier?
 After getting the windows from searching windows function. I used heatmap method to reduce the error and combine the windows of the same vehicle.
+
 ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/heatmap.png)
-![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/heatmap.png)
+
 Here are the result of test images used the pipeline.
+
  ![alt text](https://github.com/hyo009/CarND-Vehicle-Detection-P5/blob/master/output_images/test_results.png)
 
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 Here's a link to my video result
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_dAoTQSWI08/0.jpg)](https://www.youtube.com/watch?v=_dAoTQSWI08)
 
 
