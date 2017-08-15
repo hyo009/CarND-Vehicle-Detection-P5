@@ -73,11 +73,12 @@ Here are the result of test images used the pipeline.
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
 Here's a link to my video result
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/_dAoTQSWI08/0.jpg)](https://www.youtube.com/watch?v=_dAoTQSWI08)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/wrIQtbU0YOM/0.jpg)](https://www.youtube.com/watch?v=wrIQtbU0YOM)
 
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
-As taught in the classroom lectures, heatmap and thresholding was used to sum up the nearby frames detected as vehicle. The functions for this are defined in cell 19, 22 of P5.ipynb.
+As taught in the classroom lectures, heatmap and thresholding was used to sum up the nearby frames detected as vehicle. The functions for this are defined in cell 18-20 of P5.ipynb.
+I also used collections.deque to store the heatmap of teh last 5 frames to stabilize the boxes of vehicles.
 
 ---
 
