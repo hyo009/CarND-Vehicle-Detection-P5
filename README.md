@@ -82,9 +82,9 @@ I also used collections.deque to store the heatmap of teh last 5 frames to stabi
 
 ---
 
-###Discussion
+### Discussion
 
-####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
+#### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 Like I mentioned above, I was was first facing the issue that my pipeline was detecting only back portion of cars and not the side portion. This was resolved by adding more training data.
 
 I find the size of window changing dramatically in some scenes. I think I can record the history of the size and position of vehicle and show the average size of previous three or four images. Then the change of window size will be smooth.
